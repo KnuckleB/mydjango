@@ -1,0 +1,51 @@
+{% extends 'inner-page.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            margin: 70px;
+        }
+        table,th,td{
+            border: 1px solid orangered;
+            border-radius: 5px;
+        }
+        th,td{
+            height: 50px;
+            width: 500px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+        <table class="table table-bordered table-secondary table-striped table-">
+        <caption class="caption-top"><h2>Products</h2></caption>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.product_price }}</td>
+                <td>{{ product.quantity }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    	
+{% endblock %}    	
+
+    
+</body>
+</html>
